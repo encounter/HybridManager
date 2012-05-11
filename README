@@ -1,3 +1,12 @@
 IDE: IntelliJ IDEA 11.1.1
 Libraries used:
 	- Android-ViewPagerIndicator (https://github.com/JakeWharton/Android-ViewPagerIndicator)
+	
+Known bugs / Unimplemented features:
+	- Changing the "Phone" app density doesn't apply to the actual Phone.apk, since the launcher icon is actually in Contacts.apk.
+	  This will be manually overridden in the future.
+	- "Special" tab is empty, it will eventually display non-launcher apps like keyboards, SystemUI, etc.
+	
+Feel free to fork and make any improvements.
+
+-firstEncounter
