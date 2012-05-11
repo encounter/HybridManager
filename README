@@ -2,10 +2,18 @@ IDE: IntelliJ IDEA 11.1.1
 Libraries used:
 	- Android-ViewPagerIndicator (https://github.com/JakeWharton/Android-ViewPagerIndicator)
 	
+How it works:
+	- /system/aokp.unicorn is placed in the ROM (sample aokp.unicorn is in this repo). When enabled in the app, aokp.unicorn is renamed to aokp.prop and changes immediately take effect.
+	- Apps are specified in the format aokp.[name].dd=[density]
+	  System apps require using their .apk name, while data apps require using their full package name (see aokp.unicorn.sample)
+	- Backups are stored in /sdcard/hybrid.backup
+	
 Known bugs / Unimplemented features:
 	- Changing the "Phone" app density doesn't apply to the actual Phone.apk, since the launcher icon is actually in Contacts.apk.
 	  This will be manually overridden in the future.
 	- "Special" tab is empty, it will eventually display non-launcher apps like keyboards, SystemUI, etc.
+	- The "Custom..." density isn't implemented yet.
+	- Needs a settings menu for setting the user/system default densities.
 	
 Feel free to fork and make any improvements.
 

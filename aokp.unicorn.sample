@@ -1,0 +1,11 @@
+# These values are valid for xhdpi (tuna)
+aokp.per_app_scaling=1
+aokp.stock_density=320
+aokp.tablet_density=192
+aokp.system_default_dpi=320
+aokp.user_default_dpi=320
+
+aokp.com.facebook.katana.dd=256
+aokp.Talk.dd=224
+aokp.Mms.dd=256
+aokp.DownloadsUi.dd=192
