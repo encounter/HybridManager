@@ -1,33 +1,32 @@
-package com.encounterpc.hybridmanager;
+package com.encounterpc.hybridmanager.adapters;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.encounterpc.hybridmanager.R;
+import com.encounterpc.hybridmanager.util.AppInfo;
 
 import java.util.List;
 
-public class AppAdapter extends BaseAdapter {
+public class AppListAdapter extends BaseAdapter {
     private LayoutInflater mInflater;
     private ViewGroup parent;
-    private List<Drawable> icons;
-    private List<String> labels;
-    private List<Integer> densities;
+    private List<AppInfo> apps;
+    private int defaultDensity;
 
-    public AppAdapter(Context c, List<Drawable> icons, List<String> labels, List<Integer> densities) {
+    public AppListAdapter(Context c, List<AppInfo> apps, int defaultDensity) {
         mInflater = (LayoutInflater) c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        this.icons = icons;
-        this.labels = labels;
-        this.densities = densities;
+        this.apps = apps;
+        this.defaultDensity = defaultDensity;
     }
 
     @Override
     public int getCount() {
-        return icons.size();
+        return apps.size();
     }
 
     @Override
@@ -51,9 +50,10 @@ public class AppAdapter extends BaseAdapter {
             convertView = mInflater.inflate(R.layout.listitem, null);
         }
 
-        ((ImageView) convertView.findViewById(R.id.icon)).setImageDrawable(icons.get(position));
-        ((TextView) convertView.findViewById(R.id.text)).setText(labels.get(position));
-        ((TextView) convertView.findViewById(R.id.mode)).setText(densities.get(position) + "dpi");
+        AppInfo app = apps.get(position);
+        ((ImageView) convertView.findViewById(R.id.icon)).setImageDrawable(app.getIcon());
+        ((TextView) convertView.findViewById(R.id.text)).setText(app.getLabel());
+        ((TextView) convertView.findViewById(R.id.mode)).setText(app.getDensity(defaultDensity) + "dpi");
 
         return convertView;
     }

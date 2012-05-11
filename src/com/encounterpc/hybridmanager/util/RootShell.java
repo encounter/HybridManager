@@ -1,4 +1,4 @@
-package com.encounterpc.hybridmanager;
+package com.encounterpc.hybridmanager.util;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

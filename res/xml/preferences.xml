@@ -6,10 +6,10 @@
                             android:summary="Enables hybrid mode"
                             android:key="hybridEnabled"/>
         <PreferenceScreen android:title="Choose apps"
-                          android:summary="Switch apps between phone and tablet size"
+                          android:summary="Switch densities for individual applications"
                           android:key="chooseApps">
             <intent android:targetPackage="com.encounterpc.hybridmanager"
-                    android:targetClass="com.encounterpc.hybridmanager.AppActivity"/>
+                    android:targetClass="com.encounterpc.hybridmanager.AppListActivity"/>
         </PreferenceScreen>
     </PreferenceCategory>
     <PreferenceCategory android:title="Backup and Restore">
@@ -21,7 +21,8 @@
                     android:key="restore"/>
     </PreferenceCategory>
     <PreferenceCategory android:title="Credits">
-        <Preference android:title="HybridManager 0.1 alpha"
-                    android:summary="Created by @firstEncounter"/>
+        <Preference android:title="HybridManager 1.0 beta"
+                    android:summary="Created by @firstEncounter"
+                    android:key="credits"/>
     </PreferenceCategory>
 </PreferenceScreen>

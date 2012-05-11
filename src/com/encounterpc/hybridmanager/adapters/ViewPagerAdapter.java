@@ -1,4 +1,4 @@
-package com.encounterpc.hybridmanager;
+package com.encounterpc.hybridmanager.adapters;
 
 import android.content.Context;
 import android.os.Parcelable;

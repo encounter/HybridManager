@@ -2,13 +2,16 @@ package com.encounterpc.hybridmanager;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
+import com.encounterpc.hybridmanager.util.RootShell;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -93,7 +96,7 @@ public class HybridPreferenceActivity extends PreferenceActivity {
             public boolean onPreferenceClick(Preference preference) {
                 File hybridBackup = new File(Environment.getExternalStorageDirectory(), "hybrid.backup");
                 if (hybridBackup.exists()) {
-                    RootShell.execute("cp " + hybridBackup + " /system/aokp.prop");
+                    RootShell.execute("cp " + hybridBackup + " /system/aokp.prop; chmod 0644 /system/aokp.prop");
                     if (hybridBackup.exists()) {
                         findPreference("chooseApps").setEnabled(true);
                         findPreference("backup").setEnabled(true);
@@ -113,6 +116,17 @@ public class HybridPreferenceActivity extends PreferenceActivity {
                     return true;
                 }
                 return false;
+            }
+        });
+
+        findPreference("credits").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                String url = "http://twitter.com/firstEncounter";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+                return true;
             }
         });
     }

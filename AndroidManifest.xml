@@ -13,6 +13,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".AppActivity" android:label="App Chooser"/>
+        <activity android:name=".AppListActivity" android:label="App Chooser"/>
     </application>
 </manifest>
