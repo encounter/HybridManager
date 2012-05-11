@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Hybrid Mode">
+        <CheckBoxPreference android:title="Hybrid Mode"
+                            android:defaultValue="false"
+                            android:summary="Enables hybrid mode"
+                            android:key="hybridEnabled"/>
+        <PreferenceScreen android:title="Choose apps"
+                          android:summary="Switch apps between phone and tablet size"
+                          android:key="chooseApps">
+            <intent android:targetPackage="com.encounterpc.hybridmanager"
+                    android:targetClass="com.encounterpc.hybridmanager.AppActivity"/>
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Backup and Restore">
+        <Preference android:title="Backup settings"
+                    android:summary="Make sure to backup before flashing a new ROM!"
+                    android:key="backup"/>
+        <Preference android:title="Restore settings"
+                    android:summary="Restore from saved settings"
+                    android:key="restore"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Credits">
+        <Preference android:title="HybridManager 0.1 alpha"
+                    android:summary="Created by @firstEncounter"/>
+    </PreferenceCategory>
+</PreferenceScreen>
