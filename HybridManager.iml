@@ -40,13 +40,12 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://C:/Program Files (x86)/Android/android-sdk/extras/android/support/v4/android-support-v4.jar!/" />
+          <root url="jar://C:/Program Files (x86)/Android/android-sdk/extras/android/support/v13/android-support-v13.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="library" />
   </component>
 </module>
 
